@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Cuestionario de imágenes</title>
+
+</head>
+
+<body class="bg-slate-100 min-h-screen py-4 md:py-8">
+
+    <div class="max-w-3xl mx-auto px-3">
+
+        <div class="bg-white rounded-xl shadow-xl p-4 md:p-8">
+
+            <!-- Cabecera -->
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+
+                <h1 class="text-2xl md:text-3xl font-bold text-center md:text-left">
+
+                    Test de imágenes
+
+                </h1>
+
+                <div class="text-lg md:text-xl font-semibold text-center md:text-right">
+
+                    Puntuación:
+                    <span
+                        id="puntos"
+                        class="text-blue-600">
+
+                        0
+
+                    </span>/10
+
+                </div>
+
+            </div>
+
+            <!-- Contador -->
+            <div class="flex justify-center mt-6">
+
+                <span
+                    id="contador"
+                    class="bg-blue-900 text-white px-4 py-2 rounded-lg font-semibold">
+
+                    1/10
+
+                </span>
+
+            </div>
+
+            <!-- Pregunta -->
+            <h2
+                id="pregunta"
+                class="text-xl md:text-2xl font-semibold text-center mt-6">
+
+            </h2>
+
+            <!-- Imagen -->
+            <img
+                id="imagen"
+                alt="Imagen de la pregunta"
+                class="mx-auto mt-6 rounded-xl shadow-lg h-48 sm:h-56 md:h-72 w-full max-w-xl object-cover">
+
+            <!-- Opciones -->
+            <div
+                id="opciones"
+                class="grid grid-cols-2 md:grid-cols-2 gap-4 mt-8">
+
+            </div>
+
+            <!-- Explicación -->
+            <div
+                id="explicacion"
+                class="hidden mt-8 bg-green-100 border border-green-400 rounded-lg p-5 text-sm md:text-base">
+
+            </div>
+
+            <!-- Navegación -->
+            <div class="flex flex-row md:flex-row justify-center gap-4 mt-8">
+
+                <button
+                    type="button"
+                    id="anterior"
+                    class=" md:w-auto bg-blue-900 hover:bg-gray-600 text-white px-6 py-3 rounded-lg">
+
+                    ← Anterior
+
+                </button>
+
+                <button
+                    type="button"
+                    id="siguiente"
+                    class=" md:w-auto bg-blue-900 hover:bg-blue-700 text-white px-6 py-3 rounded-lg">
+
+                    Siguiente →
+
+                </button>
+
+            </div>
+
+            <!-- Terminar -->
+            <button
+                type="button"
+                id="terminar"
+                class=" block 
+    w-2/4 mx-auto mt-8 bg-red-600 hover:bg-red-700 text-white py-4 rounded-lg text-lg md:text-xl">
+
+                Terminar cuestionario
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Dialog confirmar -->
+    <dialog
+        id="dialogConfirmar"
+        class="rounded-xl p-6 md:p-8 shadow-xl w-[95%] max-w-md">
+
+        <h2 class="text-xl md:text-2xl font-bold">
+
+            Confirmar respuesta
+
+        </h2>
+
+        <p
+            id="textoConfirmacion"
+            class="my-6 text-center">
+
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-end gap-3">
+
+            <button
+                type="button"
+                id="no"
+                class="w-full sm:w-auto bg-gray-500 hover:bg-gray-600 text-white px-5 py-2 rounded">
+
+                Cancelar
+
+            </button>
+
+            <button
+                type="button"
+                id="si"
+                class="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded">
+
+                Confirmar
+
+            </button>
+
+        </div>
+
+    </dialog>
+
+    <!-- Dialog final -->
+    <dialog
+        id="dialogFinal"
+        class="rounded-xl p-6 md:p-8 w-[95%] max-w-md">
+
+        <h2 class="text-xl md:text-2xl font-bold mb-6 text-center">
+
+            Enviar cuestionario
+
+        </h2>
+
+        <form
+            id="formulario"
+            class="space-y-4">
+
+            <input
+                id="nombre"
+                type="text"
+                required
+                placeholder="Nombre"
+                class="border w-full p-3 rounded">
+
+            <input
+                id="correo"
+                type="email"
+                required
+                placeholder="Correo electrónico"
+                class="border w-full p-3 rounded">
+
+            <button
+                type="submit"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded">
+
+                Enviar
+
+            </button>
+
+        </form>
+
+        <p
+            id="mensajeFinal"
+            class="mt-4 text-center font-semibold text-green-700">
+
+        </p>
+
+        <button
+            type="button"
+            id="cerrarFinal"
+            class="mt-4 w-full bg-gray-500 hover:bg-gray-600 text-white py-2 rounded">
+
+            Cerrar
+
+        </button>
+
+    </dialog>
+
+    <script type="module" src="/js/main.js"></script>
+
+</body>
+
+</html>
